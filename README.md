@@ -1,1 +1,3 @@
 # Fenix_Racing
+
+REGRAS DE PADRONIZAÇÃO
