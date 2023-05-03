@@ -10,3 +10,5 @@ Todos os projetos deste repositório estão organizados em branch's separadas pe
 
 
 Se tá perdido e começou agora com o git de uma olhada nessa playlist :  https://youtube.com/playlist?list=PL9jCCY-sD3m-fLgYBpKHWVlHaEz9MDBnw
+
+Lista de comandos do git : https://docs.google.com/document/d/13YfJPmGhQXhTQrYP2JQ6DnHkJQH8FnN9acvRIVPWNEk/edit?usp=sharing
