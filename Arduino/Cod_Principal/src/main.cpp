@@ -2,7 +2,6 @@
 #include <mcp_can.h>
 #include <SPI.h>
 #include <Wire.h>
-Adafruit_MPU6050 mpu;
 
 long unsigned int rxId;
 unsigned char len = 0;
