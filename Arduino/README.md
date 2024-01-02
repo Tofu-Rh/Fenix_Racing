@@ -63,3 +63,5 @@ Copie e guarde o endereço da pasta de destino, será importante no futuro. Apó
 | String       | String minhaString = "Arduino"; | Armazena sequências de caracteres. |   | Serial.begin(baudRate);         | Serial.begin(9600);              | Inicializa a comunicação serial.     |
 |              |                       |                                          |   | Serial.print("Hello");          | Serial.print("Hello ");           | Envia uma string para a porta serial.|
 |              |                       |                                          |   | Serial.println("World");        | Serial.println("World");         | Envia uma string com quebra de linha.|
+
+##Livrarias
