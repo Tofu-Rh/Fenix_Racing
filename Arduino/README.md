@@ -42,13 +42,26 @@ Trabalharemos bastante com a IDE nativa do Arduino, porém primeiramente precisa
 - ### Instalando a IDE
 Para obter a versão mais recente da IDE [Clique aqui](https://www.arduino.cc/en/software). Após acessar a página principal, certifique-se de estar na aba "Software", ao lado esquerdo haverá as opções de dowload de acordo com o sistema operacional do seu computador (Na aba "Dowload Options"). Provavelmente, seu sistema operacional é Windows, clique nessa opção e continue até iniciar o dowload do instalador. Após finalizar o dowload, abra o instalador, continue até aparecer a opção abaixo:
 
-<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/eba985af-add7-4a30-b47e-0e6cd97bfd7b" alt="drawing" width="600"/></p>
+<p align="center"> Figura 1 - Janela de instalação</p>
+<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/eba985af-add7-4a30-b47e-0e6cd97bfd7b" alt="drawing" width="450"/></p>
 
-Copie e guarde o endereço da pasta de destino, será importante no futuro. Após isto, basta aguardar a instalação acabar.
+Copie e guarde o endereço da pasta de destino, será importante no futuro. Após isto, basta aguardar a instalação acabar. Feito isso, podemos dar agora nossos primeiros passos, abordarei mais no próximo tópico
 
 ### Programando com o Arduino
+ Ao abrir o arquivo .exe da pasta instalada, a interface do programa será algo parecido com a figura 2 abaixo. Já estará aberto o que chamamos de "Sketch" ( Local maior em que iremos programar) junto com alguns botões na aba superior,e opções mais acima.
 
-<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/eba985af-add7-4a30-b47e-0e6cd97bfd7b" alt="drawing" width="600"/></p>
+<p align="center"> Figura 2 - Interface da IDE do Arduino</p>
+<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/845ff0d2-6341-47ec-a01d-f5c3aee00116" alt="drawing" width="600"/></p>
+
+As partes que mais são utilizadas:
+
+1. Sketch: Esta é a aba principal onde você escreve o código do seu programa Arduino. É onde você cria, edita e salva seus sketches (programas) em linguagem C/C++.
+
+2. Verificar/Compilar (Check/Compile): Primeiro botão superior a esquerda marcado (V). Ao clicar nesta aba ou usar o botão de verificação, o código é compilado para verificar se há erros. Se houver algum erro, você será notificado na parte inferior da janela da IDE.
+
+3. Fazer Upload:  Segundo botão superior a esquerda marcado (Seta). Esta aba permite que você envie o código compilado para a placa Arduino conectada. Assim, o programa é transferido para a placa e começa a ser executado.
+
+4. Monitor Serial: Primeiro botão superior a direita marcado (Lupa). Esta aba é usada para monitorar as mensagens que o Arduino envia de volta para o computador através da porta serial. É útil para depurar e visualizar informações durante a execução do programa.
 
 
 ### Comandos mais utilizados 
