@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/ad39b84f-be20-4b12-8a97-1f50db5019c1)" alt="drawing" width="300"/></p>
+<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/17907809-d37a-4466-af13-827b905cc1f1" alt="drawing" width="150"/></p>
 
 # <div align="center"> Códigos Arduino IDE </div>
 
@@ -6,25 +6,42 @@
 Bem vinde!! Esta pasta é um guia definitivo para os membros da eletrônica aprenderem e utilizarem a plataforma Arduino IDE. Para acessar a parte de seu interesse clique em algum dos itens a seguir: 
 - [Novos membros](##Novos-membros)
   - Primeiros passos
+  - Programando com o Arduino
+  - Comandos mais utilizados
+  - Referências
 - [Livrarias](##Livrarias)
   - mcp_can.h
   - Wire.h
   - Fenix_Racing.h
   - Sensores.h
 - [Principais Códigos](##Principais-Códigos)
+  - Competicao_2023
+  - Competicao_2023_Comentado
+  - Teste_TempSensor
 
 
 ## <div align="center">Novos membros</div>
 Caso seja um membro novo ou até mesmo veterano, esta sessão terá o intuito de guiar seus os primeiros passos para o dowload e utilização do Arduino IDE.
+
 ### Primeiros passos 
-   --- *Antes de começar, tenho certeza, que poderá haver dúvidas com alguns termos já falados tanto aqui quanto na oficina ("Oque é uma IDE?", " O que é esse Arduino que falam?", " O que são sistemas embarcados?"). Todos aqui quando entramos não sabiamos estes e outros conceitos da Eletrônica e isto é normal! Não tenha medo de perguntar, de ter dúvidas, de interagir com os seus companheiros de equipe. O Fênix só é o que é hoje pelo esforço de seus membros e seu espirito de cooperatividade, não hesite em fazer algo todos aqui terão a maior vontade do mundo para explicar o que amamos fazer, e, nunca se ache incapaz! Lembre-se do seu valor, você é diferenciado por já ter aceitado estar aqui. Permita-se vivenciar desafios difíceis, dedique-se, apenas dessa forma nos permitimos evoluir!!* ---
+<p align="justify"><i>---Antes de começar, tenho certeza, que poderá haver dúvidas com alguns termos já falados tanto aqui quanto na oficina ("Oque é uma IDE?", " O que é esse Arduino que falam?", " O que são sistemas embarcados?"). Todos aqui quando entramos não sabiamos estes e outros conceitos da Eletrônica e isto é normal! Não tenha medo de perguntar, de ter dúvidas, de interagir com os seus companheiros de equipe. O Fênix só é o que é hoje pelo esforço de seus membros e seu espirito de cooperatividade, não hesite em fazer algo todos aqui terão a maior vontade do mundo para explicar o que amamos fazer, e, nunca se ache incapaz! Lembre-se do seu valor, você é diferenciado por já ter aceitado estar aqui. Permita-se vivenciar desafios difíceis, dedique-se, apenas dessa forma nos permitimos evoluir!!---</span></i></p>
 
-Alguns conceitos:
+Trabalharemos bastante com a IDE nativa do Arduino, porém primeiramente precisamos saber alguns conceitos:
 
-#### **O que é um microcontrolador?**
+- #### **O que é um microcontrolador?**
+<p align="justify">  Um microcontrolador é como o "cérebro" de muitos dispositivos eletrônicos que usamos no dia a dia. Pense em coisas como controles remotos, termostatos, eletrodomésticos inteligentes, brinquedos eletrônicos, entre outros. Esse "cérebro" é uma pequena peça de hardware que contém um processador, memória e outros componentes. Ele é programado para realizar tarefas específicas. Por exemplo, em um controle remoto, o microcontrolador é programado para enviar sinais para a TV ou outro dispositivo quando você aperta um botão. </p>
+
+- #### **O que é o Arduino?**
+<p align="justify"> O Arduino é uma plataforma de hardware (Placa que conhecemos) e software (Arduino IDE) que ajuda as pessoas a criar projetos eletrônicos. Imagine-o como um conjunto de ferramentas para inventores. Foi criado em 2005 na Itália por Massimo Banzi e David Cuartielles para tornar a eletrônica mais fácil de entender e usar.A placa Arduino é baseada em um microcontrolador, que é o cérebro do sistema. Ele possui entradas e saídas que podem ser conectadas a sensores, motores e outros dispositivos. A facilidade de programação é uma característica distintiva, usando uma linguagem baseada em C/C++ simplificada, tornando-a acessível para iniciantes. Outro ponto marcante é a comunidade Arduino. A plataforma se tornou popular globalmente, gerando uma comunidade vibrante e colaborativa. Pessoas compartilham projetos, códigos e ideias em fóruns online, facilitando a aprendizagem e inspiração para novos projetos.</p>
+
+
+- #### **O que é uma IDE?**
+<p align="justify"> IDE (Ambiente de Desenvolvimento Integrado) é uma ferramenta que torna mais fácil escrever, compilar e depurar programas de computador. Inclui editor de código, compilador, depurador e outras funcionalidades essenciais para o desenvolvimento de software. É uma peça essencial que ajuda os desenvolvedores a trabalhar de forma eficiente em seus projetos. Cada uma das fases para criar um programa seja ela escrever, compilar e depurar serão abordadas mais pra frente, ao estudarmos mais afinco a IDE do Arduino.</p>
+
+
+### Instalando a IDE
+
 Esta pasta estão todos códigos trabalhos até então na plataforma Arduino IDE pela equipe,para obter a versão mais recente da IDE [Clique aqui](https://www.arduino.cc/en/software). O código padrão trabalhado até o momento é "CodCompeticao_2023", nele está a base do que se é trabalhado na telemetria utilizando-se o Arduino, caso tenha acesse-se a versão comentada passo a passo o código: "CodCompeticao_2023COMENTADO".
-
-## <div align="center">Novos membros</div>
 
 Para que 
 Certifique-se de baixar a IDE mais recente 
