@@ -13,7 +13,8 @@ Bem vinde!! Esta pasta é um guia definitivo para os membros da eletrônica apre
   - mcp_can.h
   - Wire.h
   - Fenix_Racing.h
-
+- [Principais códigos](##Livrarias)
+  - Competicao_2023.ino
 # <div align="center"> Novos membros </div>
 Caso seja um membro novo ou até mesmo veterano, esta sessão terá o intuito de guiar seus os primeiros passos para o dowload e utilização do Arduino IDE.
 
