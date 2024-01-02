@@ -119,16 +119,14 @@ Pelas abas superiores temos resumidamente as seguintes principais funções em c
 | `init_Mask(unsigned char num, unsigned char ext, unsigned long ulData)` | Inicializa as máscaras de filtro.           |
 | `init_Filt(byte num, byte ext, unsigned long ulData)`| Inicializa os filtros de aceitação.                             |
 
+Abaixo temos os dois principais exemplos de funcionamento da biblioteca comentados:
 
-Para criar uma caixa de código em um arquivo Markdown (.md), você pode usar três crases (```) para delimitar o início e o fim do bloco de código. Aqui está um exemplo simples fornecido pela biblioteca e comentado por um membro:
-
+*Exemplo CAN_send da biblioteca mcp_can.h comentado:*
 ```cpp
-// Exemplo CAN_send da biblioteca mcp_can.h comentada
-//
 #include <mcp_can.h>
 #include <SPI.h>
 
-MCP_CAN CAN0(10);     // Instanciação do objeto CAN0 com pino CS definido como 10 (Lembrando que para o Arduino Mega o pino CS é o 53!!)
+MCP_CAN CAN0(10);     //  pino CS definido como 10 (Lembrando que para o Arduino Mega o pino CS é o 53!!)
 
 void setup()
 {
@@ -158,8 +156,68 @@ void loop()
   delay(100);   // Envio de dados a cada 100ms (baudrate)
 }
 ```
+<br><br>
+*Exemplo CAN_receive da biblioteca mcp_can.h comentado:*
+```cpp
+// CAN Receive Example
+//
+#include <mcp_can.h>
+#include <SPI.h>
 
+long unsigned int rxId;
+unsigned char len = 0;
+unsigned char rxBuf[8];
+char msgString[128];                        // Array para armazenar a mensagem
 
-- ## Wire.h
- 
+#define CAN0_INT 2                              // Pino para determinar estado de leitura de dados
+MCP_CAN CAN0(10);                              //  pino CS definido como 10 (Lembrando que para o Arduino Mega o pino CS é o 53!!)
+
+void setup()
+{
+  Serial.begin(115200);
+  
+  // Inicializa o MCP2515 rodando a 16MHz com uma taxa de transmissão de 500kb/s e máscaras e filtros desabilitados.
+  if(CAN0.begin(MCP_ANY, CAN_500KBPS, MCP_16MHZ) == CAN_OK)
+    Serial.println("MCP2515 Inicializado com Sucesso!");
+  else
+    Serial.println("Erro ao Inicializar o MCP2515...");
+  
+  CAN0.setMode(MCP_NORMAL);                     // Define o modo de operação como normal para que o MCP2515 envie ACKs para dados recebidos.
+
+  pinMode(CAN0_INT, INPUT);                            // Configurando pino para entrada /INT
+  
+  Serial.println("Exemplo de Recebimento da Biblioteca MCP2515...");
+}
+
+void loop()
+{
+  if(!digitalRead(CAN0_INT))                         // Se o pino CAN0_INT estiver baixo, leia o buffer de recebimento
+  {
+    CAN0.readMsgBuf(&rxId, &len, rxBuf);      // Lê os dados: len = comprimento dos dados, buf = byte(s) de dados
+    
+    if((rxId & 0x80000000) == 0x80000000)     // Determina se o ID é padrão (11 bits) ou estendido (29 bits)
+      sprintf(msgString, "ID Estendido: 0x%.8lX  DLC: %1d  Dados:", (rxId & 0x1FFFFFFF), len);
+    else
+      sprintf(msgString, "ID Padrão: 0x%.3lX       DLC: %1d  Dados:", rxId, len);
+  
+    Serial.print(msgString);
+  
+    if((rxId & 0x40000000) == 0x40000000){    // Determina se a mensagem é um quadro de solicitação remota.
+      sprintf(msgString, " QUADRO DE SOLICITAÇÃO REMOTA");
+      Serial.print(msgString);
+    } else {
+      for(byte i = 0; i<len; i++){
+        sprintf(msgString, " 0x%.2X", rxBuf[i]);
+        Serial.print(msgString);
+      }
+    }
+        
+    Serial.println();
+  }
+}
+```
+<br><br>
+
+- ### Wire.h
+ Utilizada para implementação do protoclo I2C.
 - ## Fenix_Racing.h
