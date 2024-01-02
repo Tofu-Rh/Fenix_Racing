@@ -117,11 +117,13 @@ Pelas abas superiores temos resumidamente as seguintes principais funções em c
 | `readMsgBuf(&rxId, &len, rxBuf)`    | Lê o conteúdo da mensagem recebida no barramento CAN. |
 | `checkReceive()`                    | Verifica se há mensagens recebidas no barramento CAN.  |
 | `init_Mask(unsigned char num, unsigned char ext, unsigned long ulData)` | Inicializa as máscaras de filtro.           |
-| `init_Filt(byte num, byte ext, unsigned long ulData)`| Inicializa os filtros de aceitação.                             |
+| `init_Filt(byte num, byte ext, unsigned long ulData)`| Inicializa os filtros de aceitação.                             | 
 
 <br><br>
 Outra função importante é a CAN_setMode(MCP_MODO), a qual perimite substituir o modo e fazer com que o modulo 2515 opere de maneiras diferentes, o padrão utilizado na equipe sempre será o NORMAL. Abaixo tem-se a tabela com todos os Modos:
 
+<div align="center">
+  
 | Modo               | Descrição                                                    |
 |--------------------|--------------------------------------------------------------|
 | `MCP_CONFIG`       | Modo inicial para configurar o MCP2515 para as necessidades do sistema. |
@@ -130,7 +132,9 @@ Outra função importante é a CAN_setMode(MCP_MODO), a qual perimite substituir
 | `MCP_NORMAL`       | Modo operacional padrão para comunicação CAN em tempo real.  |
 | `MCP_LOOPBACK`     | Modo onde o MCP2515 realiza um loopback interno.             |
 | `MCP_SLEEP`        | Modo usado para reduzir o consumo de energia do MCP2515.    |
-| `MCP_CONFIG_BITS`  | Modo usado para configurar bits específicos nos registros.   |
+| `MCP_CONFIG_BITS`  | Modo usado para configurar bits específicos nos registros.   | 
+
+</div>
 
 <br><br>
 Abaixo temos os dois principais exemplos de funcionamento da biblioteca comentados:
