@@ -13,7 +13,6 @@ Bem vinde!! Esta pasta é um guia definitivo para os membros da eletrônica apre
   - mcp_can.h
   - Wire.h
   - Fenix_Racing.h
-  - Sensores.h
 - [Principais Códigos](##Principais-Códigos)
   - Competicao_2023
   - Competicao_2023_Comentado
@@ -104,4 +103,22 @@ Pelas abas superiores temos resumidamente as seguintes principais funções em c
 |              |                       |                                          |   | Serial.print("Hello");          | Serial.print("Hello ");           | Envia uma string para a porta serial.|
 |              |                       |                                          |   | Serial.println("World");        | Serial.println("World");         | Envia uma string com quebra de linha.|
 
-##Livrarias
+## Livrarias
+
+- ## mcp.can.h
+É a principal biblioteca utilizada para envio e recebimento de dados por meio do protocolo CAN, entre Arduino e ECU. Abaixo tem-se as principais funções da biblioteca: 
+
+| Função                             | Descrição                                              |
+|------------------------------------|--------------------------------------------------------|
+| `MCP_CAN(byte CS_PIN = 53)(UNO=10)`| Construtor que define o pino CS do MCP2515.            |
+| `begin(MCP_ANY, speedset, clockset)`| Inicializa o MCP2515 com parâmetros específicos.       |
+| `sendMsgBuf(id, ext, len, buf)`     | Envia uma mensagem no barramento CAN.                  |
+| `readMsgBufID()`                    | Lê a ID da mensagem recebida no barramento CAN.        |
+| `readMsgBuf(&rxId, &len, rxBuf)`    | Lê o conteúdo da mensagem recebida no barramento CAN. |
+| `checkReceive()`                    | Verifica se há mensagens recebidas no barramento CAN.  |
+| `init_Mask(unsigned char num, unsigned char ext, unsigned long ulData)` | Inicializa as máscaras de filtro.           |
+| `init_Filt(byte num, byte ext, unsigned long ulData)`| Inicializa os filtros de aceitação.                             |
+
+- ## Wire.h
+ 
+- ## Fenix_Racing.h
