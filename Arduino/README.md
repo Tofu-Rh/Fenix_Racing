@@ -39,11 +39,27 @@ Trabalharemos bastante com a IDE nativa do Arduino, porém primeiramente precisa
 <p align="justify"> IDE (Ambiente de Desenvolvimento Integrado) é uma ferramenta que torna mais fácil escrever, compilar e depurar programas de computador. Inclui editor de código, compilador, depurador e outras funcionalidades essenciais para o desenvolvimento de software. É uma peça essencial que ajuda os desenvolvedores a trabalhar de forma eficiente em seus projetos. Cada uma das fases para criar um programa seja ela escrever, compilar e depurar serão abordadas mais pra frente, ao estudarmos mais afinco a IDE do Arduino.</p>
 
 
-### Instalando a IDE
+- ### Instalando a IDE
+Para obter a versão mais recente da IDE [Clique aqui](https://www.arduino.cc/en/software). Após acessar a página principal, certifique-se de estar na aba "Software", ao lado esquerdo haverá as opções de dowload de acordo com o sistema operacional do seu computador (Na aba "Dowload Options"). Provavelmente, seu sistema operacional é Windows, clique nessa opção e continue até iniciar o dowload do instalador. Após finalizar o dowload, abra o instalador, continue até aparecer a opção abaixo:
 
-Esta pasta estão todos códigos trabalhos até então na plataforma Arduino IDE pela equipe,para obter a versão mais recente da IDE [Clique aqui](https://www.arduino.cc/en/software). O código padrão trabalhado até o momento é "CodCompeticao_2023", nele está a base do que se é trabalhado na telemetria utilizando-se o Arduino, caso tenha acesse-se a versão comentada passo a passo o código: "CodCompeticao_2023COMENTADO".
+<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/eba985af-add7-4a30-b47e-0e6cd97bfd7b" alt="drawing" width="600"/></p>
 
-Para que 
-Certifique-se de baixar a IDE mais recente 
-Todos os projetos deste repositório estão organizados em branch's separadas pelo nome do software em específico utilizado pela área. Atente-se a nomeclatura seguida em cada um deles, para não virar bagunça. 
+Copie e guarde o endereço da pasta de destino, será importante no futuro. Após isto, basta aguardar a instalação acabar.
 
+### Programando com o Arduino
+
+<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/eba985af-add7-4a30-b47e-0e6cd97bfd7b" alt="drawing" width="600"/></p>
+
+
+### Comandos mais utilizados 
+| Tipo de Dado | Exemplo               | Descrição                                |   | Comando                        | Exemplo                          | Descrição                            |
+|--------------|-----------------------|------------------------------------------|---|--------------------------------|----------------------------------|--------------------------------------|
+| int          | int minhaVariavel;    | Armazena números inteiros.               |   | pinMode(pino, OUTPUT);          | pinMode(13, OUTPUT);              | Configura um pino como saída.         |
+| float        | float meuFloat = 3.14; | Armazena números decimais.               |   | digitalRead(pino);              | valor = digitalRead(2);           | Lê o estado de um pino digital.      |
+| char         | char meuChar = 'A';    | Armazena caracteres.                     |   | digitalWrite(pino, HIGH);      | digitalWrite(9, HIGH);           | Define um pino digital como HIGH.     |
+| boolean      | boolean meuBool = true;| Armazena valores verdadeiros ou falsos.  |   | analogRead(pino);               | valor = analogRead(A0);           | Lê um valor analógico de um pino.    |
+| byte         | byte meuByte = 200;    | Armazena valores de 0 a 255.             |   | analogWrite(pino, valor);       | analogWrite(5, 128);              | Escreve um valor analógico em um pino.|
+| long         | long meuLong = 123456789; | Armazena números inteiros longos.      |   | delay(tempo);                   | delay(1000);                     | Pausa a execução por um tempo especificado.|
+| String       | String minhaString = "Arduino"; | Armazena sequências de caracteres. |   | Serial.begin(baudRate);         | Serial.begin(9600);              | Inicializa a comunicação serial.     |
+|              |                       |                                          |   | Serial.print("Hello");          | Serial.print("Hello ");           | Envia uma string para a porta serial.|
+|              |                       |                                          |   | Serial.println("World");        | Serial.println("World");         | Envia uma string com quebra de linha.|
