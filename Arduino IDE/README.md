@@ -119,6 +119,20 @@ Pelas abas superiores temos resumidamente as seguintes principais funções em c
 | `init_Mask(unsigned char num, unsigned char ext, unsigned long ulData)` | Inicializa as máscaras de filtro.           |
 | `init_Filt(byte num, byte ext, unsigned long ulData)`| Inicializa os filtros de aceitação.                             |
 
+<br><br>
+Outra função importante é a CAN_setMode(MCP_MODO), a qual perimite substituir o modo e fazer com que o modulo 2515 opere de maneiras diferentes, o padrão utilizado na equipe sempre será o NORMAL. Abaixo tem-se a tabela com todos os Modos:
+
+| Modo               | Descrição                                                    |
+|--------------------|--------------------------------------------------------------|
+| `MCP_CONFIG`       | Modo inicial para configurar o MCP2515 para as necessidades do sistema. |
+| `MCP_WRITE_OpMode` | Modo usado para gravar dados nos registros do MCP2515.       |
+| `MCP_READ_OpMode`  | Modo usado para ler dados dos registros do MCP2515.          |
+| `MCP_NORMAL`       | Modo operacional padrão para comunicação CAN em tempo real.  |
+| `MCP_LOOPBACK`     | Modo onde o MCP2515 realiza um loopback interno.             |
+| `MCP_SLEEP`        | Modo usado para reduzir o consumo de energia do MCP2515.    |
+| `MCP_CONFIG_BITS`  | Modo usado para configurar bits específicos nos registros.   |
+
+<br><br>
 Abaixo temos os dois principais exemplos de funcionamento da biblioteca comentados:
 
 *Exemplo CAN_send da biblioteca mcp_can.h comentado:*
