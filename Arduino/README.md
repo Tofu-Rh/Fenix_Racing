@@ -105,7 +105,7 @@ Pelas abas superiores temos resumidamente as seguintes principais funções em c
 
 ## Livrarias
 
-- ## mcp.can.h
+- ### mcp.can.h
 É a principal biblioteca utilizada para envio e recebimento de dados por meio do protocolo CAN, entre Arduino e ECU. Abaixo tem-se as principais funções da biblioteca: 
 
 | Função                             | Descrição                                              |
@@ -118,6 +118,47 @@ Pelas abas superiores temos resumidamente as seguintes principais funções em c
 | `checkReceive()`                    | Verifica se há mensagens recebidas no barramento CAN.  |
 | `init_Mask(unsigned char num, unsigned char ext, unsigned long ulData)` | Inicializa as máscaras de filtro.           |
 | `init_Filt(byte num, byte ext, unsigned long ulData)`| Inicializa os filtros de aceitação.                             |
+
+
+Para criar uma caixa de código em um arquivo Markdown (.md), você pode usar três crases (```) para delimitar o início e o fim do bloco de código. Aqui está um exemplo simples fornecido pela biblioteca e comentado por um membro:
+
+```cpp
+// Exemplo CAN_send da biblioteca mcp_can.h comentada
+//
+#include <mcp_can.h>
+#include <SPI.h>
+
+MCP_CAN CAN0(10);     // Instanciação do objeto CAN0 com pino CS definido como 10 (Lembrando que para o Arduino Mega o pino CS é o 53!!)
+
+void setup()
+{
+  Serial.begin(115200);
+
+  // Inicializa o MCP2515 rodando a 16MHz ( ESSA FREQUÊNCIA VARIA DE MODULO PRA MODULO, VEJA O CRISTAL OSCILADOR DO SEU MODULO!!) . . .
+  // . . . e com uma taxa de transmissão de 500kb/s (baudrate) e máscaras e filtros desabilitados.
+  if(CAN0.begin(MCP_ANY, CAN_500KBPS, MCP_16MHZ) == CAN_OK) 
+    Serial.println("MCP2515 Inicializado com Sucesso!");
+  else 
+    Serial.println("Erro ao Inicializar o MCP2515...");
+
+  CAN0.setMode(MCP_NORMAL); 
+}
+
+byte data[8] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07};
+
+void loop()
+{
+  // Envio de dados: ID = 0x100, Frame CAN Padrão (0, se extd é 1!!), Comprimento de dados = 8 bytes, 'data' = array de bytes de dados a ser enviado
+  byte sndStat = CAN0.sendMsgBuf(0x100, 0, 8, data);
+  if(sndStat == CAN_OK){
+    Serial.println("Mensagem Enviada com Sucesso!");
+  } else {
+    Serial.println("Erro ao Enviar a Mensagem...");
+  }
+  delay(100);   // Envio de dados a cada 100ms (baudrate)
+}
+```
+
 
 - ## Wire.h
  
