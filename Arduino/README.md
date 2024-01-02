@@ -1,4 +1,4 @@
-![Texto Alternativo](https://drive.google.com/file/d/1CszijW0cji859f7NkkHJRr5fWqTTU8Qs/view?usp=sharing)
+<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/ad39b84f-be20-4b12-8a97-1f50db5019c1)" alt="drawing" width="300"/></p>
 
 # <div align="center"> Códigos Arduino IDE </div>
 
@@ -17,9 +17,11 @@ Bem vinde!! Esta pasta é um guia definitivo para os membros da eletrônica apre
 ## <div align="center">Novos membros</div>
 Caso seja um membro novo ou até mesmo veterano, esta sessão terá o intuito de guiar seus os primeiros passos para o dowload e utilização do Arduino IDE.
 ### Primeiros passos 
-<span style="color: #888888; font-style: italic;">Antes de começar, tenho certeza, que poderá haver dúvidas com alguns termos já falados tanto aqui quanto na oficina ("Oque é uma IDE?", " O que é esse Arduino que falam?", " O que são sistemas embarcados?"). Todos aqui quando entramos não sabiamos estes e outros conceitos da Eletrônica e isto é normal! Não tenha medo de perguntar, de ter dúvidas, de interagir com os seus companheiros de equipe. O Fênix só é o que é hoje pelo esforço de seus membros e seu espirito de cooperatividade, não hesite em fazer algo todos aqui terão a maior vontade do mundo para explicar o que amamos fazer, e, nunca se ache incapaz! Lembre-se do seu valor, você é diferenciado por já ter aceitado estar aqui. Permita-se vivenciar desafios difíceis, dedique-se, apenas dessa forma nos permitimos evoluir!!</span>
+   --- *Antes de começar, tenho certeza, que poderá haver dúvidas com alguns termos já falados tanto aqui quanto na oficina ("Oque é uma IDE?", " O que é esse Arduino que falam?", " O que são sistemas embarcados?"). Todos aqui quando entramos não sabiamos estes e outros conceitos da Eletrônica e isto é normal! Não tenha medo de perguntar, de ter dúvidas, de interagir com os seus companheiros de equipe. O Fênix só é o que é hoje pelo esforço de seus membros e seu espirito de cooperatividade, não hesite em fazer algo todos aqui terão a maior vontade do mundo para explicar o que amamos fazer, e, nunca se ache incapaz! Lembre-se do seu valor, você é diferenciado por já ter aceitado estar aqui. Permita-se vivenciar desafios difíceis, dedique-se, apenas dessa forma nos permitimos evoluir!!* ---
 
+Alguns conceitos:
 
+#### **O que é um microcontrolador?**
 Esta pasta estão todos códigos trabalhos até então na plataforma Arduino IDE pela equipe,para obter a versão mais recente da IDE [Clique aqui](https://www.arduino.cc/en/software). O código padrão trabalhado até o momento é "CodCompeticao_2023", nele está a base do que se é trabalhado na telemetria utilizando-se o Arduino, caso tenha acesse-se a versão comentada passo a passo o código: "CodCompeticao_2023COMENTADO".
 
 ## <div align="center">Novos membros</div>
