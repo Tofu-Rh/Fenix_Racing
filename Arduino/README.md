@@ -45,7 +45,7 @@ Para obter a versão mais recente da IDE [Clique aqui](https://www.arduino.cc/en
 <p align="center"> Figura 1 - Janela de instalação</p>
 <p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/eba985af-add7-4a30-b47e-0e6cd97bfd7b" alt="drawing" width="450"/></p>
 
-Copie e guarde o endereço da pasta de destino, será importante no futuro. Após isto, basta aguardar a instalação acabar. Feito isso, podemos dar agora nossos primeiros passos, abordarei mais no próximo tópico
+Copie e guarde o endereço da pasta de destino, será importante. Após isto, basta aguardar a instalação acabar. Feito isso,baixe agora a pasta libraries que se encontre neste repositório ([Clique aqui]())
 
 ### Programando com o Arduino
  Ao abrir o arquivo .exe da pasta instalada, a interface do programa será algo parecido com a figura 2 abaixo. Já estará aberto o que chamamos de "Sketch" ( Local maior em que iremos programar) junto com alguns botões na aba superior,e opções mais acima.
@@ -62,6 +62,33 @@ As partes que mais são utilizadas:
 3. Fazer Upload:  Segundo botão superior a esquerda marcado (Seta). Esta aba permite que você envie o código compilado para a placa Arduino conectada. Assim, o programa é transferido para a placa e começa a ser executado.
 
 4. Monitor Serial: Primeiro botão superior a direita marcado (Lupa). Esta aba é usada para monitorar as mensagens que o Arduino envia de volta para o computador através da porta serial. É útil para depurar e visualizar informações durante a execução do programa.
+   
+Pelas abas superiores temos resumidamente as seguintes principais funções em cada uma delas:
+
+| **Aba**                   | **Descrição**                                                                                               |
+|---------------------------|-------------------------------------------------------------------------------------------------------------|
+| **Arquivo (File)**        | - **Novo (New):** Cria um novo arquivo ou projeto.                                                            |
+|                           | - **Abrir (Open):** Permite abrir um arquivo ou projeto existente.                                           |
+|                           | - **Abrir Recente (Open Recent):** Exibe os arquivos recentemente abertos para facilitar o acesso rápido.    |
+|                           | - **Salvar (Save):** Salva as alterações no arquivo atual.                                                    |
+|                           | - **Salvar Como (Save As):** Permite salvar o arquivo atual com um novo nome ou em uma nova localização.    |
+|                           | - **Recarregar (Reload):** Recarrega o conteúdo do arquivo atual.                                             |
+|                           | - **Exemplos (Examples):** Abre uma janela com exemplos de código fornecidos pela Arduino.                   |
+| **Editar (Edit)**         | - **Desfazer (Undo):** Desfaz a última ação realizada.                                                         |
+|                           | - **Refazer (Redo):** Refaz uma ação que foi desfeita.                                                        |
+|                           | - **Recortar (Cut):** Remove o texto selecionado e o coloca na área de transferência.                         |
+|                           | - **Copiar (Copy):** Copia o texto selecionado para a área de transferência.                                  |
+|                           | - **Colar (Paste):** Insere o conteúdo da área de transferência no local atual do cursor.                    |
+|                           | - **Selecionar Tudo (Select All):** Seleciona todo o conteúdo do arquivo ou da janela atual.                |
+| **Rascunho (Sketch)**      | - **Incluir Biblioteca (Include Library):** Adiciona bibliotecas externas ao seu projeto Arduino.            |
+|                           | - **Importar Biblioteca (Import Library):** Importa uma biblioteca para o seu projeto.                        |
+|                           | - **Adquirir Conteúdo Adicional (Manage Libraries):** Permite a gestão de bibliotecas adicionais online.    |
+|                           | - **Exportar Compilado Binário (Export Compiled Binary):** Gera um arquivo binário (.hex) do seu projeto.   |
+| **Ferramentas (Tools)**   | - **Placa (Board):** Seleciona o modelo de placa Arduino que está sendo usada.                                |
+|                           | - **Porta:** Escolhe a porta de comunicação à qual a placa Arduino está conectada.                           |
+|                           | - **Gravador de Bootloader:** Permite gravar um bootloader na placa, se necessário.                          |
+|                           | - **Processador:** Define a velocidade do processador da placa.                                              |
+|                           | - **Programador:** Escolhe o programador para gravar o código no microcontrolador.                           |
 
 
 ### Comandos mais utilizados 
