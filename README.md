@@ -6,9 +6,11 @@
 
 ##### Por Rhomulo Thiago (com "h" nos dois)
 
-Todos os projetos deste repositório estão organizados em branch's separadas pelo nome do software em específico utilizado pela área. Atente-se a nomeclatura seguida em cada um deles, para não virar bagunça. 
+Este repositório é destinado ao armazenamento, consulta e utilização de informações relacionadas a programação de sistemas embarcados na área da Eletrônica. Cada pasta é separada pelo nome de um software específico utilizado, contendo guias para novos membros e suas aplicações para a equipe. Abaixo tem-se o link para cada uma das pastas :
 
+- [Arduino IDE](https://github.com/Tofu-Rh/Fenix_Racing/tree/main/Arduino%20IDE)
+- [STM32Cube](https://github.com/Tofu-Rh/Fenix_Racing/tree/main/STM32)
+- [VScode](https://github.com/Tofu-Rh/Fenix_Racing/tree/main/VScode)
 
-Se tá perdido e começou agora com o git de uma olhada nessa playlist :  https://youtube.com/playlist?list=PL9jCCY-sD3m-fLgYBpKHWVlHaEz9MDBnw
-
-Lista de comandos do git : https://docs.google.com/document/d/13YfJPmGhQXhTQrYP2JQ6DnHkJQH8FnN9acvRIVPWNEk/edit?usp=sharing
+## Como mexer no Github
+Este link contém apenas o repositório nosso hospedado, porém é possível criar e modificar este repositório remotamente do seu computador.  
