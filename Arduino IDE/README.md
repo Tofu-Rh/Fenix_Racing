@@ -13,6 +13,7 @@ Bem vinde!! Esta pasta é um guia definitivo para os membros da eletrônica apre
   - mcp_can.h
   - Wire.h
   - Fenix_Racing.h
+  - Arduino_FREERTOS.h
 - [Principais códigos](##Livrarias)
   - Competicao_2023.ino
 # <div align="center"> Novos membros </div>
