@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/Tofu-Rh/Fenix_Racing/assets/53307428/17907809-d37a-4466-af13-827b905cc1f1" alt="drawing" width="150"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Tofu-Rh/Fenix_Racing/main/VScode/VSCode_logo.png" alt="drawing" width="150"/></p>
 
 # <div align="center"> Códigos Arduino IDE </div>
 
