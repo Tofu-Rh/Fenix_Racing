@@ -1,37 +1,37 @@
 /**
- * @file main.cpp
- * @author Rhomulo Thiago
+ * @file tasks.cpp
+ * @author Rhomulo
  * @brief 
- * @version 0.2
- * @date 2024-08-24
+ * @version 0.1
+ * @date 2024-10-16
  * 
  * @copyright Copyright (c) 2024
  * 
  */
-#include <Arduino_FreeRTOS.h> // FreeRTOS
-#include <Arduino.h> // Config Arduino
-#include <mcp_can.h> // Protocolo CAN 
-#include <SPI.h>  // Protocolo SPI
-#include <Wire.h> // Protocolo I2C
+#include <Arduino.h>
+#include <Arduino_FreeRTOS.h>
 #include <Fenix_Racing.h> // Funcoes da equipe e Type structs de variaveis
-//#include <Adafruit_MPU6050.h> // Acelerometro
-//#include <Adafruit_MLX90614.h> // Temperatura
-//#include <avr/wdt.h> // Watchdog
+#include <task.h>
+#include <mcp_can.h>
+#include <Wire.h>
+#include <C:\github\Fenix_Racing\VScode\Projetos\Queue_FREERTOS\include\Fenix_task.h>
 
-
-// InicioVariaveis //
+// Inicio Variaveis //
 int16_Analog_Sensores Analog_Sensores;
 CAN_Data CAN_Data1; // CAN_Data.id; CAN_Data.length; CAN_Data.data;
 CAN_Data CAN_Data2;
 CAN_Data CAN_Receive;
 ECU_Data ECU;
-MCP_CAN CAN0(53);
 float led_pin,tach;
-TaskHandle_t CANHandle;
 TaskHandle_t I2CHandle;
-// FimVariaveis //
+MCP_CAN CAN0(53);
+// Fim Variaveis //
 
-// InicioTasks //
+/**
+ * @brief Task para recebimento das mensagens CAN da ECU
+ * 
+ * @param pvParameters 
+ */
 void Task1Receive_CAN(void *pvParameters)
  {
   while(1){
@@ -56,12 +56,17 @@ for (byte i = 0; i < CAN_Receive.length; i++) {
         }
       }
     }
-    Serial.println("TASK_1_CAN");
+    Serial.println("TASK 1");
     vTaskDelay(1000/ portTICK_PERIOD_MS);
   }
 
  }
 
+/**
+ * @brief Task para leitura dos sensores analogicos e envio destes dados via CAN
+ * 
+ * @param pvParameters 
+ */
 void Task2Analog_Sensores(void *pvParameters) 
 {
   (void) pvParameters; 
@@ -91,42 +96,67 @@ void Task2Analog_Sensores(void *pvParameters)
       } else {
       Serial.println("Error ao enviar msg...");
       }
-        Serial.println("TASK_2_ANALOG");
+        Serial.println("TASK2");
       // Delay for a period
-      vTaskDelay(1000/ portTICK_PERIOD_MS);
+      vTaskDelay(100000/ portTICK_PERIOD_MS);
+        wdt_reset();
     }
 };
 
- void Task3I2C_Sensores(void *pvParameters)
+
+/**
+ * @brief Task para leitura de sensores I2C
+ * 
+ * @param pvParameters 
+ */
+void Task3I2C_Sensores(void *pvParameters)
  {
-  while(1){
-    if(Wire.read() == -1){
-      vTaskSuspend(I2CHandle);
-    }
-   (void) pvParameters; 
-   Serial.println("TASK_3_I2C");
-   vTaskDelay(1000/ portTICK_PERIOD_MS);
+  (void) pvParameters; 
+  if(Wire.read() ==-1){
+    vTaskSuspend(I2CHandle);
   }
+
+   Serial.println("TASK 3");
+   vTaskDelay(1000/ portTICK_PERIOD_MS);
+
   };
 
 
-// FimTasks //
-void setup(void)
+
+/**
+ * @brief Construct das tasks do RTOS
+ * 
+ * @return status_t 
+ */
+void TasksCreate(void)
 {
-  Serial.begin(9600);
-  if (CAN0.begin(MCP_ANY, CAN_500KBPS, MCP_8MHZ) == CAN_OK) {
-    Serial.println("Modulo CAN iniciado!");
-  } else {
-    Serial.println("Erro");
-  }
-    CAN0.setMode(MCP_NORMAL);// Set operation mode to normal so the MCP2515 sends acks to received data.
-    // Recebe os dados da ECU
+   // Recebe os dados da ECU
+   Serial.println("Criando as tasks...");
     xTaskCreate(Task1Receive_CAN,"CAN Data ECU",1024,NULL,3,NULL);
     // Cria a task  para ler os sensores analogicos e enviar os dados via CAN
     xTaskCreate(Task2Analog_Sensores, "Ler Sensores Analogicos", 1024, NULL, 2, &I2CHandle);
     // Cria a task para ler os sensores I2C 
     xTaskCreate(Task3I2C_Sensores, "Ler Sensores I2C", 128, NULL, 1, NULL);
+    //return STATUS_SUCESS;
 }
 
-void loop(){}
+
+/**
+ * @brief Construct init modulo CAN
+ * 
+ * @return status_t 
+ */
+status_t CAN_Init(void){
+    if (CAN0.begin(MCP_ANY, CAN_500KBPS, MCP_8MHZ) == CAN_OK) {
+    Serial.println("Modulo CAN iniciado!");
+    return STATUS_SUCESS;
+  } else {
+    Serial.println("Erro ao iniciar CAN!");
+    return STATUS_ERROR;
+  }
+  
+CAN0.setMode(MCP_NORMAL);// Set operation mode to normal so the MCP2515 sends acks to received data.
+
+}
+
 

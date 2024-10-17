@@ -13,16 +13,9 @@
 #include <Arduino.h>
 #include <stdint.h>
 
-
 /*************************************************************************************
  *                                       VARIAVEIS                                   * 
 **************************************************************************************/
-
-
-
-
-
-
 /**
  * @brief  Struct para Sensores analogicos para Suspensao
  *  " VER RELACAO LINEAR "
@@ -44,19 +37,21 @@ typedef struct {
 typedef struct{
   int16_t cltc;
   int16_t rpm;
+  int16_t veloc;
   byte gear; 
   float sec;
   float batt;
 }ECU_Data;
 
 /**
- * @brief Struct padrão para dados CAN
+ * @brief Struct para dados a serem enviados via CAN
  * 
  */
 typedef struct {
-    long unsigned int id;
-    unsigned char length;
-    byte data[8];
+  uint8_t data[8]; // Byte (teste)
+  long unsigned int id;
+  uint8_t length; // unsigned char
+
 }CAN_Data;
 
 
@@ -66,7 +61,7 @@ typedef struct {
 
 void armazenarBytes(int valor, byte *dataArray, int startIndex);
 void Calcular_distancia();
-//void Calcular_Curso_Amortedor(uint16_t pot);
-//void Calcular_Curso_Direcao(uint16_t direcao);
+void Calcular_Curso_Amortedor(uint16_t pot);
+void Calcular_Curso_Direcao(uint16_t direcao);
 
 #endif
