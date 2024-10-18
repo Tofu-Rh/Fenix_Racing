@@ -14,14 +14,10 @@
 #include <SPI.h>  // Protocolo SPI
 #include <Wire.h> // Protocolo I2C
 #include <Fenix_Racing.h> // Funcoes da equipe e Type structs de variaveis
-#include <C:\github\Fenix_Racing\VScode\Projetos\Queue_FREERTOS\include\Fenix_task.h>
+#include <C:\github\Fenix_Racing\VScode\Projetos\Queue_FREERTOS\include\Fenix_Task.h>
 //#include <Adafruit_MPU6050.h> // Acelerometro
 //#include <Adafruit_MLX90614.h> // Temperatura
 #include <avr/wdt.h> // Watchdog
-
-
-// InicioTasks //
-
 
 void setup(void)
 {
@@ -34,8 +30,9 @@ status_t CAN_Init(void);
 /*
 while(STATUS_ERROR == CAN_Init()){
   Serial.println("Tentando conectar novamente...");
+  status_t CAN_Init(void);
 }*/
-TasksCreate();
+RTOS_Init();
 
 }
 

@@ -13,7 +13,10 @@
 
 
 
-
+/**
+ * @brief Handlers para as funcoes de Task
+ * 
+ */
 typedef enum
 {
     STATUS_SUCESS = 0U, 				/*!< Generic operation success status */
@@ -21,10 +24,9 @@ typedef enum
 } status_t;
 
 
-
-void TasksCreate(void);
-
+void RTOS_Init(void);
 status_t CAN_Init(void);
+
 
 #endif
 

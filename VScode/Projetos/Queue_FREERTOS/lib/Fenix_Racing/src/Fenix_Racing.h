@@ -52,7 +52,7 @@ typedef struct {
   long unsigned int id;
   uint8_t length; // unsigned char
 
-}CAN_Data;
+}CAN_Message;
 
 
 /*************************************************************************************
@@ -60,8 +60,8 @@ typedef struct {
 **************************************************************************************/
 
 void armazenarBytes(int valor, byte *dataArray, int startIndex);
-void Calcular_distancia();
-void Calcular_Curso_Amortedor(uint16_t pot);
+void Calcular_Distancia();
+void Calcular_Curso_Amortecedor(uint16_t pot);
 void Calcular_Curso_Direcao(uint16_t direcao);
-
+void Calcular_Tempo(TickType_t startTick);
 #endif
