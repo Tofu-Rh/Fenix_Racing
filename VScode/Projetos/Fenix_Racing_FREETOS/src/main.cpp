@@ -33,6 +33,7 @@ TaskHandle_t I2CHandle;
 
 // InicioTasks //
 void Task1Receive_CAN(void *pvParameters)
+
  {
   while(1){
    (void) pvParameters; 
@@ -97,7 +98,9 @@ void Task2Analog_Sensores(void *pvParameters)
     }
 };
 
- void Task3I2C_Sensores(void *pvParameters)
+
+
+void Task3I2C_Sensores(void *pvParameters)
  {
   while(1){
     if(Wire.read() == -1){
@@ -108,7 +111,6 @@ void Task2Analog_Sensores(void *pvParameters)
    vTaskDelay(1000/ portTICK_PERIOD_MS);
   }
   };
-
 
 // FimTasks //
 void setup(void)

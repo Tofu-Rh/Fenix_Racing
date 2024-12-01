@@ -17,12 +17,6 @@
 /*************************************************************************************
  *                                       VARIAVEIS                                   * 
 **************************************************************************************/
-
-
-
-
-
-
 /**
  * @brief  Struct para Sensores analogicos para Suspensao
  *  " VER RELACAO LINEAR "
@@ -60,13 +54,9 @@ typedef struct {
 }CAN_Data;
 
 
-/*************************************************************************************
- *                                       FUNCOES                                     * 
-**************************************************************************************/
-
 void armazenarBytes(int valor, byte *dataArray, int startIndex);
 void Calcular_distancia();
-//void Calcular_Curso_Amortedor(uint16_t pot);
+//void Calcular_Curso_Amortecedor(uint16_t pot);
 //void Calcular_Curso_Direcao(uint16_t direcao);
 
 #endif
